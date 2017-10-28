@@ -8,7 +8,7 @@
 .p1{
   position: absolute;
   bottom: 112px;
-  margin-left: 150px;
+  margin-left: 100px;
   width: 70px;
   height: 80px;
   background-image: url("http://front-back.com/wp-content/uploads/2013/01/ken.png");
@@ -46,7 +46,8 @@
     background-position: -280px -80px;
   }
 }
-/* Middle Hit */
+/* MiddleHHit */
+/* punch */
 .middleHit {
   -webkit-animation: middleHit steps(3) 0.15s infinite;
           animation: middleHit steps(3) 0.15s infinite;

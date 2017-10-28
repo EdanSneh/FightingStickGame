@@ -1,42 +1,47 @@
+
+
 var $player1 = $('.p1');
 // var $player2 = $('.p2');
-var $p1Pos, $p2Pos;
-//numbers in timeout are animation durations in milliseconds
+var $p1Pos;
+// numbers in timeout are animation durations in milliseconds
 var upHit = function(){
-	$player1.addClass('upHit')
-	setTimeout(fuction() { $player1.removeClass('upHit');},150);
+	$player1.addClass('upHit');
+	setTimeout(function() { $player1.removeClass('upHit');}, 300);
 };
 
-var isUpHit = function(){
-          return $p1Pos+10 == $p2Pos ? true : false;
-      };
+// var isUpHit = function(){
+//           return $p1Pos+10 == $p2Pos ? true : false;
+//       };
 
 
 var middleHit = function(){
 	$player1.addClass('middleHit')
-	setTimeout(fuction() { $player1.removeClass('middleHit');},150);
+	setTimeout(function() { $player1.removeClass('middleHit');},600);
 };
 var downHit = function(){
 	$player1.addClass('downHit')
-	setTimeout(fuction() { $player1.removeClass('downHit');},150);
+	setTimeout(function() { $player1.removeClass('downHit');},300);
 };
 var jump = function(){
 	$player1.addClass('jump')
-	setTimeout(fuction() { $player1.addClass('gravity');},500);
-	setTimeout(fuction() { $player1.removeClass('jump down');},1000);
+	setTimeout(function() { $player1.addClass('down');},500);
+	setTimeout(function() { $player1.removeClass('jump down');},1000);
 };
 var kneel = function(){
 	$player1.addClass('kneel');
 }
-
+var jump = function(){
+  $player1.addClass('jump');
+  setTimeout(function() { $player1.addClass('down'); }, 500); 
+  setTimeout(function() { $player1.removeClass('jump down'); }, 1000); 
+};
 //move person class
 var left = function(){
-	$player1.addClass('walk').css({marginLeft:'-=10px'});
+	$player1.addClass('.walk').css({'margin-left':'-=10px'});
 };
 var right = function(){
-	$player1.addClass('walk').css({marginLeft:'+=10px'});
+	$player1.addClass('.walk').css({'marginLeft':'+=10px'});
 };
-
 // on keydown events
 $(document).on('keydown keyup', function(e) {
     if (e.type == 'keydown') {
@@ -48,7 +53,7 @@ $(document).on('keydown keyup', function(e) {
     	}
     	if(e.keyCode==82
     		&& !$player1.hasClass('upHit')
-    		&& !$palyer1.hasClass('downHit')
+    		&& !$player1.hasClass('downHit')
     	){
     		middleHit();
     	}
@@ -58,9 +63,24 @@ $(document).on('keydown keyup', function(e) {
     	){
     		downHit();
     	}
+      if (e.keyCode == 87
+            && !$player1.hasClass('downHit') 
+            && !$player1.hasClass('upHit')
+        && !$player1.hasClass('middleHit')
+        ) { 
+            jump();
+        }
 
-    	if(e.keyCode == 37){left();}
-    	if(e.keyCode == 39){right();}
+        // down - kneel
+        if (e.keyCode == 83 
+            && !$player1.hasClass('downHit') 
+            && !$player1.hasClass('upHit')
+        && !$player1.hasClass('middleHit')
+        ) { 
+            kneel();
+        }
+    	if(e.keyCode == 65){left();}
+    	if(e.keyCode == 68){right();}
     }
    	else{
    	$player1.removeClass('walk kneel');
