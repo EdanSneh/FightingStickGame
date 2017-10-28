@@ -192,6 +192,198 @@
   }
 }
 
+
+
+/*player 2*/
+.p2{
+  position: absolute;
+  bottom: 112px;
+  margin-left: 150px;
+  width: 70px;
+  height: 80px;
+  background-image: url("http://front-back.com/wp-content/uploads/2013/01/ken.png");
+  /* other sprites preloading */
+}
+.p2:before{
+  content: '';
+  background: url("http://front-back.com/wp-content/uploads/2013/01/ken-tatsumaki-senpuu-kyaku.png") no-repeat;
+}
+.p2:after{
+  content: '';
+  background: url("http://front-back.com/wp-content/uploads/2013/01/ken-shoryuken.png") no-repeat;
+}
+
+/* stance */
+.stance2 {
+  -webkit-animation: stance2 steps(4) 0.5s infinite;
+          animation: stance2 steps(4) 0.5s infinite;
+}
+
+@-webkit-keyframes stance2 {
+  from {
+    background-position: 0px -80px;
+  }
+  to {
+    background-position: -280px -80px;
+  }
+}
+
+@keyframes stance2 {
+  from {
+    background-position: 0px -80px;
+  }
+  to {
+    background-position: -280px -80px;
+  }
+}
+/* MiddleHHit */
+/* punch */
+.middleHit2 {
+  -webkit-animation: middleHit2 steps(3) 0.15s infinite;
+          animation: middleHit2 steps(3) 0.15s infinite;
+}
+
+@-webkit-keyframes middleHit2 {
+  from {
+    background-position: 0px -160px;
+  }
+  to {
+    background-position: -210px -160px;
+  }
+}
+
+@keyframes middleHit2 {
+  from {
+    background-position: 0px -160px;
+  }
+  to {
+    background-position: -210px -160px;
+  }
+}
+/* walking */
+.walk2 {
+  -webkit-animation: walk2 steps(5) 0.5s infinite;
+          animation: walk2 steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes walk2 {
+  from {
+    background-position: 0px -240px;
+  }
+  to {
+    background-position: -350px -240px;
+  }
+}
+
+@keyframes walk2 {
+  from {
+    background-position: 0px -240px;
+  }
+  to {
+    background-position: -350px -240px;
+  }
+}
+/* up Hit */
+.upHit2 {
+  -webkit-animation: upHit2 steps(5) 0.5s infinite;
+          animation: upHit2 steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes upHit2 {
+  from {
+    background-position: 0px -480px;
+  }
+  to {
+    background-position: -350px -480px;
+  }
+}
+
+@keyframes upHit2 {
+  from {
+    background-position: 0px -480px;
+  }
+  to {
+    background-position: -350px -480px;
+  }
+}
+/* Down Hit */
+.downHit2 {
+  -webkit-animation: downHit2 steps(5) 0.5s infinite;
+          animation: downHit2 steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes downHit2 {
+  from {
+    background-position: 0px -560px;
+  }
+  to {
+    background-position: -350px -560px;
+  }
+}
+
+@keyframes downHit2 {
+  from {
+    background-position: 0px -560px;
+  }
+  to {
+    background-position: -350px -560px;
+  }
+}
+/* kneel down */
+.kneel2 {
+  -webkit-animation: kneel2 steps(1) 0.2s infinite;
+          animation: kneel2 steps(1) 0.2s infinite;
+}
+
+@-webkit-keyframes kneel2 {
+  from {
+    background-position: 0px -720px;
+  }
+  to {
+    background-position: -70px -720px;
+  }
+}
+
+@keyframes kneel2 {
+  from {
+    background-position: 0px -720px;
+  }
+  to {
+    background-position: -70px -720px;
+  }
+}
+/* jump */
+.jump2 {
+  -webkit-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  bottom: 225px;
+  -webkit-animation: jump2 steps(7) 1s infinite;
+          animation: jump2 steps(7) 1s infinite;
+}
+.jump2.down2 {
+  bottom: 112px;
+}
+
+@-webkit-keyframes jump2 {
+  from {
+    background-position: 0px -640px;
+  }
+  to {
+    background-position: -490px -640px;
+  }
+}
+
+@keyframes jump2 {
+  from {
+    background-position: 0px -640px;
+  }
+  to {
+    background-position: -490px -640px;
+  }
+}
+
+
+
 .stage {
   position: absolute;
   top: 0;
