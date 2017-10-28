@@ -1,0 +1,208 @@
+.flip {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+/* sprite tile dimensions */
+/* player1 */
+.p1{
+  position: absolute;
+  bottom: 112px;
+  margin-left: 150px;
+  width: 70px;
+  height: 80px;
+  background-image: url("http://front-back.com/wp-content/uploads/2013/01/ken.png");
+  /* other sprites preloading */
+}
+.p1:before{
+  content: '';
+  background: url("http://front-back.com/wp-content/uploads/2013/01/ken-tatsumaki-senpuu-kyaku.png") no-repeat;
+}
+.p1:after{
+  content: '';
+  background: url("http://front-back.com/wp-content/uploads/2013/01/ken-shoryuken.png") no-repeat;
+}
+
+/* stance */
+.stance {
+  -webkit-animation: stance steps(4) 0.5s infinite;
+          animation: stance steps(4) 0.5s infinite;
+}
+
+@-webkit-keyframes stance {
+  from {
+    background-position: 0px -80px;
+  }
+  to {
+    background-position: -280px -80px;
+  }
+}
+
+@keyframes stance {
+  from {
+    background-position: 0px -80px;
+  }
+  to {
+    background-position: -280px -80px;
+  }
+}
+/* Middle Hit */
+.middleHit {
+  -webkit-animation: middleHit steps(3) 0.15s infinite;
+          animation: middleHit steps(3) 0.15s infinite;
+}
+
+@-webkit-keyframes middleHit {
+  from {
+    background-position: 0px -160px;
+  }
+  to {
+    background-position: -210px -160px;
+  }
+}
+
+@keyframes middleHit {
+  from {
+    background-position: 0px -160px;
+  }
+  to {
+    background-position: -210px -160px;
+  }
+}
+/* walking */
+.walk {
+  -webkit-animation: walk steps(5) 0.5s infinite;
+          animation: walk steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes walk {
+  from {
+    background-position: 0px -240px;
+  }
+  to {
+    background-position: -350px -240px;
+  }
+}
+
+@keyframes walk {
+  from {
+    background-position: 0px -240px;
+  }
+  to {
+    background-position: -350px -240px;
+  }
+}
+/* up Hit */
+.upHit {
+  -webkit-animation: upHit steps(5) 0.5s infinite;
+          animation: upHit steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes upHit {
+  from {
+    background-position: 0px -480px;
+  }
+  to {
+    background-position: -350px -480px;
+  }
+}
+
+@keyframes upHit {
+  from {
+    background-position: 0px -480px;
+  }
+  to {
+    background-position: -350px -480px;
+  }
+}
+/* Down Hit */
+.downHit {
+  -webkit-animation: downHit steps(5) 0.5s infinite;
+          animation: downHit steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes downHit {
+  from {
+    background-position: 0px -560px;
+  }
+  to {
+    background-position: -350px -560px;
+  }
+}
+
+@keyframes downHit {
+  from {
+    background-position: 0px -560px;
+  }
+  to {
+    background-position: -350px -560px;
+  }
+}
+/* kneel down */
+.kneel {
+  -webkit-animation: kneel steps(1) 0.2s infinite;
+          animation: kneel steps(1) 0.2s infinite;
+}
+
+@-webkit-keyframes kneel {
+  from {
+    background-position: 0px -720px;
+  }
+  to {
+    background-position: -70px -720px;
+  }
+}
+
+@keyframes kneel {
+  from {
+    background-position: 0px -720px;
+  }
+  to {
+    background-position: -70px -720px;
+  }
+}
+/* jump */
+.jump {
+  -webkit-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  bottom: 225px;
+  -webkit-animation: jump steps(7) 1s infinite;
+          animation: jump steps(7) 1s infinite;
+}
+.jump.down {
+  bottom: 112px;
+}
+
+@-webkit-keyframes jump {
+  from {
+    background-position: 0px -640px;
+  }
+  to {
+    background-position: -490px -640px;
+  }
+}
+
+@keyframes jump {
+  from {
+    background-position: 0px -640px;
+  }
+  to {
+    background-position: -490px -640px;
+  }
+}
+
+.stage {
+  position: absolute;
+  top: 0;
+  width: 450px;
+  height: 330px;
+  background: url("http://front-back.com/wp-content/uploads/2013/01/sf2-bg.jpg") no-repeat 0px -100px;
+  background-size: contain;
+  float: left;
+  margin-right: 20px;
+}
+
+body {
+  margin: 0px;
+  padding: 0;
+}

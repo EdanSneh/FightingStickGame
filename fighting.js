@@ -3,8 +3,8 @@ var $player1 = $('.p1');
 var $p1Pos, $p2Pos;
 //numbers in timeout are animation durations in milliseconds
 var upHit = function(){
-	$player1.addClass('uphit')
-	setTimeout(fuction() { $player1.removeClass('uphit');},150);
+	$player1.addClass('upHit')
+	setTimeout(fuction() { $player1.removeClass('upHit');},150);
 };
 
 var isUpHit = function(){
@@ -13,12 +13,12 @@ var isUpHit = function(){
 
 
 var middleHit = function(){
-	$player1.addClass('middlehit')
-	setTimeout(fuction() { $player1.removeClass('middlehit');},150);
+	$player1.addClass('middleHit')
+	setTimeout(fuction() { $player1.removeClass('middleHit');},150);
 };
 var downHit = function(){
-	$player1.addClass('downhit')
-	setTimeout(fuction() { $player1.removeClass('downhit');},150);
+	$player1.addClass('downHit')
+	setTimeout(fuction() { $player1.removeClass('downHit');},150);
 };
 var jump = function(){
 	$player1.addClass('jump')
@@ -41,20 +41,20 @@ var right = function(){
 $(document).on('keydown keyup', function(e) {
     if (e.type == 'keydown') {
     	if(e.keyCode==69
-    		&& !$player1.hasClass('middlehit')
-    		&& !$player1.hasClass('downhit')
+    		&& !$player1.hasClass('middleHit')
+    		&& !$player1.hasClass('downHit')
     	){
     		upHit();
     	}
     	if(e.keyCode==82
-    		&& !$player1.hasClass('uphit')
-    		&& !$palyer1.hasClass('downhit')
+    		&& !$player1.hasClass('upHit')
+    		&& !$palyer1.hasClass('downHit')
     	){
     		middleHit();
     	}
     	if(e.keyCode==70
-    		&& !$player1.hasClass('uphit')
-    		&& !$player1.hasClass('middlehit')
+    		&& !$player1.hasClass('upHit')
+    		&& !$player1.hasClass('middleHit')
     	){
     		downHit();
     	}
