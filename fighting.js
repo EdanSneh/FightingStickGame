@@ -56,7 +56,7 @@ var isHit = function(){
 
 var middleHit = function(){
 	$player1.addClass('middleHit')
-	setTimeout(function() { $player1.removeClass('middleHit');},150);
+	setTimeout(function() { $player1.removeClass('middleHit');},300);
 };
 var downHit = function(){
 	$player1.addClass('downHit')
@@ -224,7 +224,7 @@ var upHit2 = function(){
 
 var middleHit2 = function(){
   $player2.addClass('middleHit2')
-  setTimeout(function() { $player2.removeClass('middleHit2');},150);
+  setTimeout(function() { $player2.removeClass('middleHit2');},300);
 };
 var downHit2 = function(){
   $player2.addClass('downHit2')
