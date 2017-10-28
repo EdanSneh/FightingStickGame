@@ -385,8 +385,8 @@
 
 
 .stage {
-  position: absolute;
-  top: 0;
+  top: 150px;
+  left: calc(50% - 225px); 
   width: 450px;
   height: 330px;
   background: url("http://front-back.com/wp-content/uploads/2013/01/sf2-bg.jpg") no-repeat 0px -100px;
