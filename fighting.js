@@ -1,5 +1,5 @@
 var $player1 = $('.p1');
-var $player2 = $('.p2');
+// var $player2 = $('.p2');
 var $p1Pos, $p2Pos;
 //numbers in timeout are animation durations in milliseconds
 var upHit = function(){
