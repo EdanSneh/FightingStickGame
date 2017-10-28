@@ -7,6 +7,7 @@ var $player2Pos = $player2.offset().left;
 
 var switch2 = 0;
 var switch1 = 0;
+var hasjumpdelay = false;
 
 // var $player2 = $('.p2');
 
@@ -31,7 +32,9 @@ var isHit = function(){
 
   // alert($player1Pos-$player2Pos);
   
-          return $player2Pos - $player1Pos <= 40 ? true : false;
+          return $player2Pos - $player1Pos <= 40 
+
+          ? true : false;
       };
 
 var middleHit = function(){
@@ -43,9 +46,11 @@ var downHit = function(){
 	setTimeout(function() { $player1.removeClass('downHit');},300);
 };
 var jump = function(){
-	$player1.addClass('jump')
+  jumpdelay();
+  $player1.addClass('jump')
 	setTimeout(function() { $player1.addClass('down');},500);
 	setTimeout(function() { $player1.removeClass('jump down');},1000);
+
 };
 var kneel = function(){
 	$player1.addClass('kneel');
@@ -64,6 +69,7 @@ $(document).on('keydown keyup', function(e) {
     		&& !$player1.hasClass('upHit')
         && !$player1.hasClass('downHit')
         && !$player1.hasClass('middleHit')
+        && !hasjumpdelay
     	){
     		upHit();
         delay(1);
@@ -73,6 +79,7 @@ $(document).on('keydown keyup', function(e) {
     		&& !$player1.hasClass('upHit')
     		&& !$player1.hasClass('downHit')
         && !$player1.hasClass('middleHit')
+        && !hasjumpdelay
     	){
 
     		middleHit();
@@ -83,6 +90,7 @@ $(document).on('keydown keyup', function(e) {
     		&& !$player1.hasClass('upHit')
         && !$player1.hasClass('downHit')
         && !$player1.hasClass('middleHit')
+        && !hasjumpdelay
     	){
     		downHit();
         delay(3);
@@ -116,16 +124,45 @@ $(document).on('keydown keyup', function(e) {
  });
 
 
+//checks for jump vs block secrets
+var edgecases = function(){
 
+  if(hasjumpdelay&&!!(switch2==1)){
+    //kill == false
+    return false;
+  }
+  if(hasjumpdelay2&&!(switch1==1)){
+    //kill == false
+    return false;
+  }
+  if($player1.hasClass('kneel')&&!(switch2==3)){
+    //kill == false
+    return false;
+  }
+  if($player2.hasClass('kneel2')&&!(switch1==3)){
+    //kill == false
+    return false;
+  }
+  return true
+}
 
+var jumpdelay = function(){
 
+  hasjumpdelay = true;
+  setTimeout(function(){hasjumpdelay = false},1000);
+}
+var jumpdelay2 = function(){
+
+  hasjumpdelay2 = true;
+  setTimeout(function(){hasjumpdelay2 = false},1000);
+}
 //for the human eye
 
 var delay = function(num){
   switch1=num
   if(switch2!=num){
     setTimeout(function(){
-      if(switch2!=num&&isHit()){
+      if(switch2!=num&&isHit()&&edgecases()){
        $player2.addClass('.walk2').css({'marginLeft':'400px'});
       }
 
@@ -138,7 +175,7 @@ var delay2 = function(num){
   switch2=num
   if(switch1!=num){
     setTimeout(function(){
-      if(switch1!=num&&isHit()){
+      if(switch1!=num&&isHit()&&edgecases()){
        $player2layer1.addClass('.walk').css({'marginLeft':'0px'});
     }
     
@@ -169,9 +206,11 @@ var downHit2 = function(){
   setTimeout(function() { $player2.removeClass('downHit2');},300);
 };
 var jump2 = function(){
+  jumpdelay2();
   $player2.addClass('jump2')
   setTimeout(function() { $player2.addClass('down2');},500);
   setTimeout(function() { $player2.removeClass('jump2 down2');},1000);
+  
 };
 var kneel2 = function(){
   $player2.addClass('kneel2');
@@ -191,6 +230,7 @@ $(document).on('keydown keyup', function(e) {
         && !$player2.hasClass('upHit2')
         && !$player2.hasClass('downHit2')
         && !$player2.hasClass('middleHit2')
+        && !hasjumpdelay2
       ){
         upHit2();
         delay2(1);
@@ -200,6 +240,7 @@ $(document).on('keydown keyup', function(e) {
         && !$player2.hasClass('upHit2')
         && !$player2.hasClass('downHit2')
         && !$player2.hasClass('middleHit2')
+        && !hasjumpdelay2
       ){
         middleHit2();
         delay2(2);
@@ -209,6 +250,7 @@ $(document).on('keydown keyup', function(e) {
         && !$player2.hasClass('upHit2')
         && !$player2.hasClass('downHit2')
         && !$player2.hasClass('middleHit2')
+        && !hasjumpdelay2
       ){
         downHit2();
         delay2(3);
@@ -220,6 +262,7 @@ $(document).on('keydown keyup', function(e) {
          && !$player2.hasClass('jump2')
         ) { 
             jump2();
+
         }
 
         // down - kneel
