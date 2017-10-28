@@ -74,10 +74,10 @@ var kneel = function(){
 }
 //move person class
 var left = function(){
-	$player1.addClass('.walk').css({'margin-left':'-=10px'});
+	$player1.addClass('.walk').css({'margin-left':'-=11.5px'});
 };
 var right = function(){
-	$player1.addClass('.walk').css({'marginLeft':'+=10px'});
+	$player1.addClass('.walk').css({'marginLeft':'+=11.5px'});
 };
 // on keydown events
 $(document).on('keydown keyup', function(e) {
@@ -189,9 +189,9 @@ var delay = function(num){
        givescore(1);
       }
 
-    },500)
+    },200)
   }  
-  setTimeout(function() { switch1=0;},500);
+  setTimeout(function() { switch1=0;},300);
 }
 
 var delay2 = function(num){
@@ -204,10 +204,10 @@ var delay2 = function(num){
        givescore(2);
     }
     
-    },500)
+    },300)
 
   }
-  setTimeout(function() { switch2=0;},500);
+  setTimeout(function() { switch2=0;},200);
 }
 
 
@@ -243,10 +243,10 @@ var kneel2 = function(){
 
 //move person class
 var left2 = function(){
-  $player2.addClass('.walk2').css({'margin-left':'-=10px'});
+  $player2.addClass('.walk2').css({'margin-left':'-=11.5px'});
 };
 var right2 = function(){
-  $player2.addClass('.walk2').css({'marginLeft':'+=10px'});
+  $player2.addClass('.walk2').css({'marginLeft':'+=11.5px'});
 };
 // on keydown events
 $(document).on('keydown keyup', function(e) {

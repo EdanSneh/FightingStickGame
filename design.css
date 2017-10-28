@@ -71,8 +71,8 @@ p{
 /* MiddleHHit */
 /* punch */
 .middleHit {
-  -webkit-animation: middleHit steps(3) 0.15s infinite;
-          animation: middleHit steps(3) 0.15s infinite;
+  -webkit-animation: middleHit steps(3) 0.3s infinite;
+          animation: middleHit steps(3) 0.3s infinite;
 }
 
 @-webkit-keyframes middleHit {
@@ -261,8 +261,8 @@ p{
 /* MiddleHHit */
 /* punch */
 .middleHit2 {
-  -webkit-animation: middleHit2 steps(3) 0.15s infinite;
-          animation: middleHit2 steps(3) 0.15s infinite;
+  -webkit-animation: middleHit2 steps(3) 0.3s infinite;
+          animation: middleHit2 steps(3) 0.3s infinite;
 }
 
 @-webkit-keyframes middleHit2 {
@@ -411,7 +411,7 @@ p{
   left: calc(50% - 225px); 
   width: 450px;
   height: 330px;
-  background: url("http://front-back.com/wp-content/uploads/2013/01/sf2-bg.jpg") no-repeat 0px -100px;
+  background: url('Forest-Background.png') no-repeat 0px -100px;
   background-size: contain;
   float: left;
   margin-right: 20px;
