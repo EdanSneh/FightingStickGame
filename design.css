@@ -1,0 +1,36 @@
+@mixin anim($animName, $steps, $animNbr, $animParams){
+  .#{$animName} {
+    @content;
+    animation:$animName steps($steps) $animParams;
+  }
+  @keyframes #{$animName} {
+    from { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
+    to { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
+  }
+}
+
+/* element who's going to receive this class will be mirrored */
+.flip { transform:scaleX(-1); }
+
+/* sprite tile dimensions */
+$spriteWidth:70px;
+$spriteHeight:80px;
+
+/* player1 */
+.player1 {
+  position:absolute; bottom:112px; margin-left:150px;
+  width:$spriteWidth; height:$spriteHeight;
+  background-image:url('http://front-back.com/wp-content/uploads/2013/01/ken.png');
+
+  /* other sprites preloading */
+  &:before {
+    content:'';
+    background: url('http://front-back.com/wp-content/uploads/2013/01/ken-tatsumaki-senpuu-kyaku.png') no-repeat;
+  }
+  &:after {
+    content:'';
+    background: url('http://front-back.com/wp-content/uploads/2013/01/ken-shoryuken.png') no-repeat;
+  }
+}
+/* punch */
+@include anim($animName:middleHit, $steps:3, $animNbr:3, $animParams:.15s infinite);
