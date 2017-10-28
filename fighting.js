@@ -7,7 +7,7 @@ var upHit = function(){
 	setTimeout(fuction() { $player1.removeClass('uphit');},150);
 };
 
-var isupHit = function(){ 
+var isUpHit = function(){
           return $p1Pos+10 == $p2Pos ? true : false;
       };
 
@@ -42,7 +42,7 @@ $(document).on('keydown keyup', function(e) {
     if (e.type == 'keydown') {
     	if(e.keyCode==69
     		&& !$player1.hasClass('middlehit')
-    		&& !$palyer1.hasClass('downhit')
+    		&& !$player1.hasClass('downhit')
     	){
     		upHit();
     	}
@@ -54,7 +54,7 @@ $(document).on('keydown keyup', function(e) {
     	}
     	if(e.keyCode==70
     		&& !$player1.hasClass('uphit')
-    		&& !$palyer1.hasClass('middlehit')
+    		&& !$player1.hasClass('middlehit')
     	){
     		downHit();
     	}

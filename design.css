@@ -17,7 +17,7 @@ $spriteWidth:70px;
 $spriteHeight:80px;
 
 /* player1 */
-.player1 {
+.p1 {
   position:absolute; bottom:112px; margin-left:150px;
   width:$spriteWidth; height:$spriteHeight;
   background-image:url('http://front-back.com/wp-content/uploads/2013/01/ken.png');
@@ -34,3 +34,11 @@ $spriteHeight:80px;
 }
 /* punch */
 @include anim($animName:middleHit, $steps:3, $animNbr:3, $animParams:.15s infinite);
+/* stance */
+@include anim($animName:stance, $steps:4, $animNbr:2, $animParams:.5s infinite);
+
+.stage {
+  position:absolute; top:0; width:450px; height:330px;
+  background:url('http://front-back.com/wp-content/uploads/2013/01/sf2-bg.jpg') no-repeat 0px -100px;
+  background-size:contain;
+  float:left; margin-right:20px;
