@@ -1,3 +1,25 @@
+
+p{
+  position:absolute;
+  text-align: center;
+  top: 440px;
+  left:calc(50% - 270px); 
+
+}
+
+.score1{
+  font-size: 150pt;
+}
+
+.score2{
+  font-size: 150pt;
+  position:absolute;
+  text-align: right;
+  left:90%;
+  top: 120px;
+  /*float:left;*/
+}
+
 .flip {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
@@ -8,10 +30,10 @@
 .p1{
   position: absolute;
   bottom: 112px;
-  margin-left: 100px;
+  margin-left: 0px;
   width: 70px;
   height: 80px;
-  background-image: url("http://front-back.com/wp-content/uploads/2013/01/ken.png");
+  background-image: url('p1_poses.png');
   /* other sprites preloading */
 }
 .p1:before{
@@ -198,10 +220,10 @@
 .p2{
   position: absolute;
   bottom: 112px;
-  margin-left: 150px;
+  margin-left: 380px;
   width: 70px;
   height: 80px;
-  background-image: url("http://front-back.com/wp-content/uploads/2013/01/ken.png");
+  background-image: url('p2_poses.png');
   /* other sprites preloading */
 }
 .p2:before{
