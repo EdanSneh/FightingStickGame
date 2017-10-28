@@ -2,13 +2,30 @@
 
 var $player1 = $('.p1');
 var $player2 = $('.p2');
+var $stage = $('.stage');
 var $player1Pos = $player1.offset().left;
 var $player2Pos = $player2.offset().left;
 
 var switch2 = 0;
 var switch1 = 0;
 var hasjumpdelay = false;
+var hasjumpdelay2 = false;
+var score1=0;
+var score2=0;
+  $(".score1").html(score1);
+  $(".score2").html(score2);
 
+var givescore = function(num){
+  if(num == 1){
+    score1 += 1;
+  }
+  if(num == 2){
+    score2+=1;
+  }
+  
+  $(".score1").html(score1);
+  $(".score2").html(score2);
+}
 // var $player2 = $('.p2');
 
 // numbers in timeout are animation durations in milliseconds
@@ -112,10 +129,14 @@ $(document).on('keydown keyup', function(e) {
         ) { 
             kneel();
         }
-    	if(e.keyCode == 65){left();}
+    	if(e.keyCode == 65
+        && !($stage.offset().left-$player1.offset().left >= 0)
+        ){left();
+      }
     	if(e.keyCode == 68
         && !isNear()
-        ){right();}
+        ){right();
+  }
     }
    	else{
    	$player1.removeClass('walk kneel');
@@ -163,7 +184,9 @@ var delay = function(num){
   if(switch2!=num){
     setTimeout(function(){
       if(switch2!=num&&isHit()&&edgecases()){
-       $player2.addClass('.walk2').css({'marginLeft':'400px'});
+      $player1.addClass('.walk').css({'marginLeft':'0px'});
+       $player2.addClass('.walk2').css({'marginLeft':'380px'});
+       givescore(1);
       }
 
     },500)
@@ -176,7 +199,9 @@ var delay2 = function(num){
   if(switch1!=num){
     setTimeout(function(){
       if(switch1!=num&&isHit()&&edgecases()){
-       $player2layer1.addClass('.walk').css({'marginLeft':'0px'});
+       $player1.addClass('.walk').css({'marginLeft':'0px'});
+        $player2.addClass('.walk2').css({'marginLeft':'380px'});
+       givescore(2);
     }
     
     },500)
@@ -278,6 +303,7 @@ $(document).on('keydown keyup', function(e) {
         && !isNear()
         ){left2();}
       if(e.keyCode == 39
+       && !($stage.offset().left-$player2.offset().left <= -380)
         ){right2();}
     }
     else{
